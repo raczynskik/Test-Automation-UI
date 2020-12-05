@@ -13,6 +13,7 @@
         <cucumber.version>6.8.1</cucumber.version>
         <junit.version>4.13</junit.version>
         <selenide.version>5.15.1</selenide.version>
+        <faker.version>1.0.2</faker.version>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
@@ -48,9 +49,8 @@
         <dependency>
             <groupId>com.github.javafaker</groupId>
             <artifactId>javafaker</artifactId>
-            <version>1.0.2</version>
+            <version>${faker.version}</version>
         </dependency>
-
     </dependencies>
 
     <build>
@@ -65,6 +65,12 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.22.2</version>
+            </plugin>
         </plugins>
     </build>
+
 </project>

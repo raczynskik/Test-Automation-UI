@@ -2,6 +2,7 @@ package components;
 
 import com.codeborne.selenide.SelenideElement;
 import com.github.javafaker.Faker;
+import pageObjects.MainPage;
 
 import static com.codeborne.selenide.Selenide.$;
 
