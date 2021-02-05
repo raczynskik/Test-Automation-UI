@@ -1,5 +1,6 @@
 package pageObjects;
 
+import builder.userBuilder.UserBuilder;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import com.github.javafaker.Faker;
@@ -63,6 +64,20 @@ public class RegisterPage {
         inputPostalCode.setValue(zipPostal);
         selectCountry(countryName);
         inputMobilePhone.setValue(mobilePhone);
+        buttonRegister.click();
+        return this;
+    }
+
+    public RegisterPage registerUser(UserBuilder user) {
+        inputFirstNamePersonalInformation.setValue(user.getPersonalInformationFirstName());
+        inputLastNamePersonalInformation.setValue(user.getPersonalInformationLastName());
+        inputPasswordPersonalInformation.setValue(user.getPassword());
+        inputAddress1.setValue(user.getAddress());
+        inputCity.setValue(user.getCityUserAddress());
+        selectState(String.valueOf(user.getUserState()));
+        inputPostalCode.setValue(user.getZipCodeUserAddress());
+        selectCountry(user.getCountry());
+        inputMobilePhone.setValue(user.getMobilePhone());
         buttonRegister.click();
         return this;
     }
