@@ -1,7 +1,7 @@
 package steps;
 
-import builder.UserBuilder;
-import builder.UserState;
+import builder.userBuilder.UserBuilder;
+import builder.userBuilder.UserState;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -23,23 +23,22 @@ public class CreateAccountSteps {
     @When("User fills all data required to register")
     public void userFillsAllDataRequiredToRegister() {
         UserBuilder user = UserBuilder.builder()
-                .personalInformationFirstName("fsd")
-                .personalInformationLastName("dadas")
-                .password("fdfsd")
-                .firstNameUserAddress("dad")
-                .lastNameUserAddress("da")
-                .address("da")
-                .cityUserAddress("da")
-                .userState(UserState.Arizona)
-                .zipCodeUserAddress("dadas")
-                .mobilePhone("dasda")
-                .aliasReference("dasa")
+                .personalInformationFirstName("Fred")
+                .personalInformationLastName("L. Brown")
+                .password("{4EdsTKHah.c49")
+                .firstNameUserAddress("Fred")
+                .lastNameUserAddress("L. Brown")
+                .address("One Infinite Loop")
+                .cityUserAddress("California")
+                .userState(UserState.California)
+                .zipCodeUserAddress("95014")
+                .country("United states")
+                .mobilePhone("(408) 606-5775")
                 .build();
 
 
         authenticationPage
                 .registerUserWithRandomEmail()
-//                .registerUser("Fred","L. Brown","{4EdsTKHah.c49","One Infinite Loop","Cupertino","California","95014","United states","(408) 606-5775");
                     .registerUser(user);
     }
 
