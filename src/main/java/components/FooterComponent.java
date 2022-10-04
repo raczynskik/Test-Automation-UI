@@ -2,6 +2,7 @@ package components;
 
 import com.codeborne.selenide.SelenideElement;
 import com.github.javafaker.Faker;
+import org.junit.Test;
 import pageObjects.MainPage;
 
 import static com.codeborne.selenide.Selenide.$;
@@ -19,5 +20,9 @@ public class FooterComponent {
         Faker faker = new Faker();
         inputNewsletter.setValue(faker.internet().emailAddress()).pressEnter();
         return new MainPage();
+
+
+
+
     }
 }
